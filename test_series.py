@@ -1,6 +1,6 @@
 import pytest
 
-PARAMS_TABLE = [
+PARAMS_TABLE_FIB = [
 	(0, 0),
 	(1, 1),
 	(2, 1),
@@ -10,16 +10,36 @@ PARAMS_TABLE = [
 	(6, 8),
 	(7, 13)
 ]
+PARAMS_TABLE_LUCAS = [
+	(0, 2),
+	(1, 1),
+	(2, 3),
+	(3, 4),
+	(4, 7),
+	(5, 11),
+	(6, 18),
+	(7, 29)
+]
 
 
-
-@pytest.mark.parametrize("n, result", PARAMS_TABLE)
+@pytest.mark.parametrize("n, result", PARAMS_TABLE_FIB)
 def test_fibonacci(n, result):
 	from series import fibonacci
 	assert fibonacci(n) == result
 
 
-'''@pytest.mark.parametrize("m, n, result", PARAMS_TABLE)
+@pytest.mark.parametrize("n, result", PARAMS_TABLE_LUCAS)
 def test_lucas(n, result):
 	from series import lucas
-	assert series(n) == result'''
+	assert lucas(n) == result
+
+
+@pytest.mark.parametrize("n, result", PARAMS_TABLE_FIB)
+def test_sum_series(n, result):
+    from series import sum_series
+    assert sum_series(n) == result
+
+@pytest.mark.parametrize("n, result", PARAMS_TABLE_LUCAS)
+def test_sum_series_again(n, result):
+    from series import sum_series
+    assert sum_series(n,2,1) == result
