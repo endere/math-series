@@ -43,3 +43,8 @@ def test_sum_series(n, result):
 def test_sum_series_again(n, result):
     from series import sum_series
     assert sum_series(n,2,1) == result
+
+@pytest.mark.parametrize("index", range(0,100))
+def test_versus(index):
+	from series import sum_series, fibonacci
+	assert sum_series(index) == fibonacci(index)
