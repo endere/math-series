@@ -43,6 +43,6 @@ if __name__ == '__main__':
         """This is a function that will give you the nth value in the Lucas numbers. Online assistance was required. Code not fully our own. Help found at http://stackoverflow.com/questions/3793647/how-to-calculate-lucas-numbers-in-java."""
     
         print(lucas(15))
-         """This is code that takes optional parameters and applies fibonacci rules to them."""
+        """This is code that takes optional parameters and applies fibonacci rules to them."""
    
         print(sum_series(22,4,7))
